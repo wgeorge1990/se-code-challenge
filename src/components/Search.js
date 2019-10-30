@@ -14,7 +14,7 @@ const Search = () => {
             setSearchValue(event.target.value);
             setInputError(null)
         } else {
-            setInputError("The value must be a number between 1 and 3000")
+            setInputError("The value must be a number between 1 and 2221")
         }
     };
 
