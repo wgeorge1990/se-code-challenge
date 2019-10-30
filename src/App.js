@@ -8,11 +8,16 @@ import { Button } from "semantic-ui-react";
 export default () => {
     const [latest, setLatest] = useState([null]);
     useEffect(() => {
-        fetch("https://xkcd.now.sh/?comic=latest")
+        const abortController = new AbortController();
+        const signal = abortController.signal;
+        fetch("https://xkcd.now.sh/?comic=latest", {signal: signal})
             .then(res => res.json())
             .then(data => setLatest(data))
             .catch(err => console.error("Error with request...", err.message))
-    });
+        return function cleanup() {
+            abortController.abort()
+        }
+    }, []);
 
   return (
       <div className="App">
