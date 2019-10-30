@@ -3,6 +3,9 @@ import { Image } from "semantic-ui-react";
 
 export default (props) => (
         <Image
-            className="comicImage"
-            src={props.comic.img} />
+            className="latestImage"
+            src={props.comic.img}
+            title={props.comic.title}
+            alt={props.comic.alt}
+        />
 )

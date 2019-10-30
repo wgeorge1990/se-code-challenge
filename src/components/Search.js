@@ -21,12 +21,13 @@ export default () => {
         <div>
             <div className="ui left action input" >
                 <Input
+                    className="searchInput"
                     focus
                     placeholder='Search...'
                     value={searchValue}
                     onChange={ handleChange }/>
                 <button
-                    className="ui blue icon right labeled button"
+                    className="searchSubmit ui blue icon right labeled button "
                     onClick={ search } >
                     Search
                 </button>
