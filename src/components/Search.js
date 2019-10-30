@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import ComicCard from './ComicCard';
 import {Input} from 'semantic-ui-react'
 
-export default () => {
+const Search = () => {
     const [searchValue, setSearchValue] = useState('');
     const [searchedForComic, setSearchedForComic] = useState(null);
 
@@ -35,4 +35,5 @@ export default () => {
             {searchedForComic && searchedForComic.img ? <ComicCard comic={searchedForComic}/> : null}
         </div>
     )
-}
+};
+export default Search

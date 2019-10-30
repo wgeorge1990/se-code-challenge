@@ -5,15 +5,17 @@ import Home from './components/Home'
 import Search from "./components/Search";
 import { Button } from "semantic-ui-react";
 
-export default () => {
+const App = () => {
     const [latest, setLatest] = useState([null]);
     useEffect(() => {
         const abortController = new AbortController();
         const signal = abortController.signal;
+        //                                               Pass signal from abortController
         fetch("https://xkcd.now.sh/?comic=latest", {signal: signal})
             .then(res => res.json())
             .then(data => setLatest(data))
-            .catch(err => console.error("Error with request...", err.message))
+            .catch(err => console.error("Error with request...", err.message));
+        //cancel subscription by aborting
         return function cleanup() {
             abortController.abort()
         }
@@ -49,4 +51,5 @@ export default () => {
           />
       </div>
   );
-}
+};
+export default App

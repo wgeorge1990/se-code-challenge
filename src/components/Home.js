@@ -1,5 +1,5 @@
 import React from "react";
 import ComicCard from "./ComicCard"
 
-export default (props) => ( <ComicCard comic={props.latest}/> );
-
+const Home = (props) => ( <ComicCard comic={props.latest}/> );
+export default Home
