@@ -40,7 +40,7 @@ const Search = () => {
                     Search
                 </button>
             </div>
-            {inputError ? <h1>{inputError}</h1> : null}
+            {inputError ? <h1 id="searchError">{inputError}</h1> : null}
             {searchedForComic && searchedForComic.img ? <ComicCard comic={searchedForComic}/> : null}
         </div>
     )
