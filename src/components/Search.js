@@ -5,9 +5,17 @@ import {Input} from 'semantic-ui-react'
 const Search = () => {
     const [searchValue, setSearchValue] = useState('');
     const [searchedForComic, setSearchedForComic] = useState(null);
+    const [inputError, setInputError] = useState(null);
 
     const handleChange = (event) => {
-        setSearchValue(event.target.value);
+        console.log(Number(event.target.value));
+        if (typeof((parseInt(event.target.value)) === 'number') &&
+            Number(event.target.value) >= 0 && Number(event.target.value) <= 2221) {
+            setSearchValue(event.target.value);
+            setInputError(null)
+        } else {
+            setInputError("The value must be a number between 1 and 3000")
+        }
     };
 
     const search = () => {
@@ -32,6 +40,7 @@ const Search = () => {
                     Search
                 </button>
             </div>
+            {inputError ? <h1>{inputError}</h1> : null}
             {searchedForComic && searchedForComic.img ? <ComicCard comic={searchedForComic}/> : null}
         </div>
     )
