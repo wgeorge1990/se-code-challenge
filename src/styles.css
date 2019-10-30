@@ -1,0 +1,34 @@
+.App {
+    margin-top: 30px;
+    margin-left: 130px;
+}
+
+.comicImage {
+    margin-top: 20px;
+}
+
+#latest {
+    background: none;
+}
+
+#latest:hover {
+    background: lightgray;
+    color: blue;
+}
+
+#search {
+    background: none;
+    margin-bottom: 30px;
+}
+
+#search:hover {
+    background: lightgray;
+    color: blue;
+}
+
+#controlButtons {
+    padding-bottom: 20px;
+}
+
+
+
